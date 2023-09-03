@@ -33,7 +33,9 @@ INSTALLED_APPS = [
     # third party
     'rest_framework',
     # for authentication 
-    'djoser'
+    'djoser',
+    #documenting
+    'drf_yasg',
 ]
 
 AUTH_USER_MODEL = 'authentication.User'
@@ -53,6 +55,17 @@ SIMPLE_JWT = {
 }
 
 #jwt djoser authentication end
+
+#for Docummentation
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
